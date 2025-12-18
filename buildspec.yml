@@ -4,6 +4,8 @@ phases:
     runtime-versions:
       nodejs: 20
     commands:
+      - npm cache clean --force
+      - rm -rf node_modules package-lock.json
       - npm install -g @angular/cli@17
   pre_build:
     commands:
@@ -18,3 +20,4 @@ artifacts:
   base-directory: dist/my-angular-project
   files:
     - '**/*'
+
