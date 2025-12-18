@@ -4,7 +4,10 @@ phases:
     runtime-versions:
       nodejs: 18
     commands:
-      - cd frontend/src
+      - pwd
+      - echo "=== [DEBUG] File Structure Check ==="
+      - find . -maxdepth 3 -not -path '*/.*'
+      - echo "=== [DEBUG] Check End ==="
       - npm cache clean --force
       - rm -rf node_modules package-lock.json
       - npm install -g @angular/cli@17
@@ -13,7 +16,6 @@ phases:
       - npm install
   build:
     commands:
-      - cd frontend/src
       - ng build -c production
       - echo "Build completed."
     finally:
