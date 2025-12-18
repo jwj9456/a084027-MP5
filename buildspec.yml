@@ -4,10 +4,7 @@ phases:
     runtime-versions:
       nodejs: 20
     commands:
-      - echo "=== 파일 구조 확인 시작 ==="
-      - ls -R
-      - echo "=== 파일 구조 확인 끝 ==="
-      - cd frontend/src
+      - cd  frontend/src
       - npm cache clean --force
       - rm -rf node_modules package-lock.json
       - npm install -g @angular/cli@17
@@ -16,7 +13,7 @@ phases:
       - npm install
   build:
     commands:
-      - cd backend/src
+      - cd frontend/src
       - ng build -c production
       - echo "Build completed."
     finally:
