@@ -13,6 +13,7 @@ phases:
       - npm install
   build:
     commands:
+      - cd backend/demo/src/main
       - ng build -c production
       - echo "Build completed."
     finally:
@@ -21,4 +22,6 @@ artifacts:
   base-directory: dist/my-angular-project
   files:
     - '**/*'
-
+cache:
+  paths:
+    - node_modules/**/* 
