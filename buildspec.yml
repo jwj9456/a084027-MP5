@@ -2,9 +2,9 @@ version: 0.2
 phases:
   install:
     runtime-versions:
-      nodejs: 20
+      nodejs: 18
     commands:
-      - find . -maxdepth 4 -not -path '*/.*'
+      - cd frontend/src
       - npm cache clean --force
       - rm -rf node_modules package-lock.json
       - npm install -g @angular/cli@17
@@ -13,6 +13,7 @@ phases:
       - npm install
   build:
     commands:
+      - cd frontend/src
       - ng build -c production
       - echo "Build completed."
     finally:
