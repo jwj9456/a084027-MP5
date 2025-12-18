@@ -10,4 +10,4 @@ phases:
 
   build:
     commands:
-      - ng test --no-watch --no-progress --browsers=ChromeHeadlessCI 
+      - npx ng test --no-watch --no-progress --browsers=ChromeHeadlessCI 
