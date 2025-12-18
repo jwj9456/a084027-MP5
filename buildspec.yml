@@ -4,6 +4,7 @@ phases:
     runtime-versions:
       nodejs: 20
     commands:
+      - cd frontend
       - npm cache clean --force
       - rm -rf node_modules package-lock.json
       - npm install -g @angular/cli@17
